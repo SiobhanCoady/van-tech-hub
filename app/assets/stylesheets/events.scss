@@ -1,3 +1,87 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$background: #293F55;
+$orgBg: #FF9F9F;
+$orgText: #EAF25D;
+$eventBg: #0FC2E2;
+$eventText: #EFFFDD;
+$newsBg: #FFE35C;
+$newsText: #01ABAA;
+$usersBg: #8FB449;
+$usersText: #761F72;
+$techBg: #724499;
+$techText: #95DBE0;
+$tabMargin: -3.28em;
+
+a {
+  decoration: none;
+}
+
+a.usersLink:hover, a.usersLink:visited {color: $usersText;}
+a.eventsLink:hover, a.eventsLink:visited {color: $eventText;}
+a.newsLink:hover, a.newsLink:visited {color: $newsText;}
+a.orgLink:hover, a.orgLink:visited {color: $orgText;}
+a.techLink:hover, a.techLink:visited {color: $techText;}
+
+
+.admin {
+  background-color: $background;
+  height: 100%;
+}
+
+.meetupId {
+  padding: 0.9em 0 .5em 6em !important;
+  font-weight: bold;
+  font-color: white;
+}
+
+
+
+#rectangle1 {
+  margin-top: $tabMargin;
+	width: 70vw;
+	min-height:70vh;
+  border-radius: 1em;
+  z-index: 1em;
+  top: -1em;
+  position: relative;
+  background-color: $eventBg;
+  padding-bottom: 1em;
+}
+
+
+
+.eventsTable {
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 5px $usersBg;
+  width: 50%;
+  // border: 7px solid $newsBg;
+  background-color: #EFFFDD;
+  padding: 3em;
+  // margin: 1em;
+  min-width: 90%;
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+
+  tbody tr:last-child td {
+    padding-bottom: 1em !important;
+  }
+}
+.eventsTable:hover {
+  // border-radius: 1em;
+  box-shadow: inset 0 0 0 5px $usersBg !important;
+  z-index: 3;
+  position: relative;
+}
+
+
+#btnEvent.waves-effect.waves-light.btn.waves-input-wrapper {
+  /* The alpha value allows the text and background color
+  of the button to still show through. */
+   background-color: #8FB449 !important;
+
+ }

@@ -16,9 +16,15 @@ $usersBg: #8FB449;
 $usersText: #EAF25D;
 $techBg: #724499;
 $techText: #95DBE0;
+$tabMargin: -3.28em;
 
 .admin {
   background-color: $background;
+  height: 100%;
+}
+
+.tabLink {
+  text-decoration: none;
 }
 
 .bob {
@@ -28,7 +34,7 @@ $techText: #95DBE0;
 }
 
 .tab:first-child {
-    margin-left: 0.55em !important;
+    margin-left: 0.75em !important;
     color: $orgText;
     background-color: $orgBg;
 }
@@ -54,14 +60,16 @@ $techText: #95DBE0;
 }
 
 .tab{
-  margin-top: 8vh;
-  padding: 0.4em 0.6em 1.8em 1em !important;
+  margin-top: 6vh;
+  padding: 0.8em 0.6em 1.8em 1em !important;
   width: 15%;
 	background: white;
   border-radius: 0.6em 0.6em 0 0 ;
   z-index: 0;
   position: relative;
-  font-weight: bold;
+  font-family: $bodyText;
+  font-size: 20px;
+  // font-weight: bold;
 }
 
 .pageTitle {
@@ -93,7 +101,7 @@ thead {
   min-width: 90%;
   position: relative;
   z-index: 0;
-  margin: 0 auto;
+  margin: 0 auto 2em;
 
   tbody tr:last-child td {
     padding-bottom: 1em !important;
@@ -112,9 +120,9 @@ tr:hover {
 }
 
 #rectangle {
-  margin-top: -2.4em;
+  margin-top: $tabMargin;
 	width: 70vw;
-	min-height:80vh;
+	min-height:70vh;
   border-radius: 1em;
   z-index: 1em;
   top: -1em;
@@ -132,12 +140,14 @@ tr:hover {
   }
 
 .h5class {
-  padding: 0.3em 0 .5em 3em !important;
-  font-weight: bold;
+  padding: 0.3em 0 .5em 3.7em !important;
+  // font-weight: bold;
+  font-size: 16px;
 }
 .h5class1 {
-  padding: 0.9em 0 .5em 3em !important;
-  font-weight: bold;
+  padding: 0.9em 0 .5em 3.7em !important;
+  // font-weight: bold;
+  font-size: 16px;
 }
 
 .titleAdmin {

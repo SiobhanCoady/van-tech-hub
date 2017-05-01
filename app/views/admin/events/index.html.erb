@@ -1,19 +1,71 @@
-<h1>Admin > Events</h1>
 
-<div id="add-event">
-    <%= form_for 'admin_events_path' do |f| %>
-      <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+<!-- <div id="add-event"> -->
+    <%#= form_for 'admin_events_path' do |f| %>
+      <!-- <div> -->
+        <%#= f.label :name %>
+        <%#= f.text_field :name %>
+      <!-- </div> -->
+      <%#= f.submit 'Add Meetup' %>
+    <%# end %>
+<!-- </div> -->
+
+
+
+
+<body class="admin">
+  <div class="container">
+    <div class="row">
+      <div id="folders">
+        <div class="col s2 tab"><%= link_to "Users", admin_index_path, :class => "usersLink"%></div>
+        <div class="col s2 tab"><%= link_to "Events", admin_events_path, :class => "eventsLink" %></div>
+        <div class="col s2 tab"><%= link_to "News", admin_news_index_path, :class => "newsLink" %></div>
+        <div class="col s2 tab"><%= link_to "Organizations", organizations_path, :class => "orgLink" %></div>
+        <div class="col s2 tab"><%= link_to "Technologies", technologies_path, :class => "techLink" %></div>
+        <div class="col s2 tab"><h3 class="pageTitle right-align titleAdmin">Admin</h3></div>
       </div>
-      <%= f.submit 'Add Meetup' %>
-    <% end %>
-</div>
+    </div>
+      <div id="rectangle1">
 
-<div id="list-events">
-    <% @meetups.each do |meetup| %>
-      <p><%= meetup.name %></p>
-      <p><%= link_to 'Destroy', admin_event_path(meetup.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <hr>
-    <% end %>
-</div>
+        <span class="col s2 meetupId">Meetup ID</span>
+        <div class="row">
+          <div class="userBoxes">
+              <div id="add-event">
+                <%= form_for 'admin_events_path' do |f| %>
+                  <div class="row">
+                      <div id="formUser" class="input-field col s1"></div>
+                      <div id="formUser" class="input-field col s8">
+                        <%= f.label :organization %>
+                        <%= f.text_field :organization, class: 'validate', id: 'name', type: 'text' %>
+                      </div>
+                      <div class="input-field col s2 btncontainer">
+                        <%= f.submit 'Add Meetup', id: 'btnEvent', class: 'waves-effect waves-light btn'%>
+                      </div>
+                  </div>
+                <% end %>
+              </div>
+
+            <table class="highlight eventsTable">
+              <div id="list-events">
+                <thead>
+                  <tr>
+                    <th>Meetup ID</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <% @meetups.each do |meetup| %>
+                  <tbody>
+                    <tr>
+                      <td><%= meetup.name %></td>
+                      <td><%= link_to 'Destroy', admin_event_path(meetup.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  </tbody>
+                <% end %>
+              </div>
+            </table>
+
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
