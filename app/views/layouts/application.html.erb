@@ -51,27 +51,27 @@
 
 
           <li><a href="/">Home</a></li>
-
-
-          <% current_user = User.find_by_id session[:user_id] %>
-
-          <li><a href="/directory">Explore</a></li>
-          <li><a href="/sessions" data-method = "delete">Log Out</a></li>
-
-
-          <li><a href="/admin">Admin</a></li>
-          <li><a href="/organizations/new">New Organization</a></li>
-
-          <li><a href="/organizations/new">New Organization</a></li>
-
-
-
-
           <li><a href="/sessions/new">Login</a></li>
           <li><a href="/users/new">Sign up</a></li>
 
-      
 
+          <% if user_signed_in? %>
+            <% current_user = User.find_by_id session[:user_id] %>
+
+
+            <li><a href="/directory">Explore</a></li>
+            <li><a href="/sessions" data-method = "delete">Log Out</a></li>
+
+
+            <% if current_user.is_admin? %>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/organizations/new">New Organization</a></li>
+            <% elsif current_user.organization_id == nil %>
+            <li><a href="/organizations/new">New Organization</a></li>
+            <% end %>
+
+
+          <% end %>
 
         </ul>
       </div>

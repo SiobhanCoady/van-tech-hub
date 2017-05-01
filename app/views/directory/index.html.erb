@@ -38,7 +38,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyjDO7vP98P6enrMggLCskPci
 
 <% if @organizations %>
     <% @organizations.each do |organization| %>
-      <p><%= organization.name %></p>
+      <p><%= link_to organization.name, organization_path(organization) %></p>
       <hr>
     <% end %>
 <% end %>

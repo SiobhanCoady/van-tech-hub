@@ -35,7 +35,7 @@
                 <td><%= user.first_name %> <%= user.last_name %></td>
                 <td><%= user.email%></td>
                 <td><%= Organization.find(user.organization_id).name%></td>
-                <td><%= link_to "Accept", admin_claim_path(user), method: :patch %><%= link_to "Reject", admin_claim_path(user), method: :delete%></td>
+                <td><%= link_to "Accept", admin_claim_path(user), method: :patch %> <%= link_to "Reject", admin_claim_path(user), method: :delete%></td>
               </tr>
             </tbody>
             <% end %>

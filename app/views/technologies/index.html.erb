@@ -1,17 +1,36 @@
-<center>
-<h1>Technology</h1>
-<hr>
+<body class="admin">
+  <div class="container">
+    <div class="row">
+      <div id="folders">
+
+        <div class="col s2 tab l900"><%= link_to "Users", admin_index_path %></div>
+        <div class="col s2 tab l900"><%= link_to "Events" %></div>
+        <div class="col s2 tab l900"><%= link_to "News" %></div>
+        <div class="col s2 tab l900"><%= link_to "Organizations", organizations_path %></div>
+        <div class="col s2 tab l900"><%= link_to "Technologies", technologies_path %></div>
+        <div class="col s2 tab"><h3 class="pageTitle right-align titleAdmin">Admin</h3></div>
+
+      </div>
+    </div>
+    <div id="rectangle">
+
+      <div class="row">
+        <div class="userBoxes">
+          <span class="col s6 h5class">technology</span>
+          <table class="highlight pendingTable">
+
 
 <%= @technology.errors.full_messages.join(', ') %>
 <%= form_for @technology do |f| %>
+<tbody>
+  <tr>
+    <td><%= f.label :Language %></td>
 
-    <%= f.label :Language %>
-    <br>
-    <%= f.text_field :language %>
-    <br>
+    <td><%= f.text_field :language %></td>
+
   <%= f.submit %>
 <% end %>
-
+</td>
 <hr>
 
 <table>
